@@ -53,10 +53,24 @@
 
     font-size: 1.25rem;
     font-weight: 600;
-    transition: background-color .2s ease;
+    transition: all .2s ease;
 
-    &:hover {
+    &:not(:disabled):hover {
         background: $blue-dark;
+    }
+    &.active {
+        background: $white;
+        color: $title
+    }
+    &.active:not(:disabled):hover {
+        background: $red;
+        color: $white;
+    }
+
+    &:disabled {
+        background: $white;
+        color: $text;
+        cursor: not-allowed;
     }
 
 }
